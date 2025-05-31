@@ -3,9 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./src/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="script.js"></script>
+  <title>Rustic Marinara</title>
+  <style>
+    .scroll-snap-x {
+      scroll-snap-type: x mandatory;
+    }
+    .snap-start {
+      scroll-snap-align: start;
+    }
+  </style>
 </head>
-<body>
-  
+<body class="bg-[#FDF6EC]">
+<!-- Navbar -->
+  <header class="px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-4">
+      <img src="image/Logo.jpg" alt="Rustic Marinara Logo" class="w-32 h-32 object-contain">
+    </div>
+    <nav class="flex gap-20 mt-2 text-2xl">
+      <a href="#" class="text-red-700 font-semibold hover:underline">Home</a>
+      <a href="#" class="text-red-700 font-semibold hover:underline">Menu</a>
+      <a href="#" class="text-red-700 font-semibold hover:underline">Deals</a>
+      <a href="#" class="text-red-700 font-semibold hover:underline">About Us</a>
+    </nav>
+  </header>
+
+  <div class="relative w-full overflow-hidden">
+    <div id="slider" class="flex transition-transform duration-500 ease-in-out w-[200%]">
+      <img src="image/special-offer-1.jpg" class="w-auto h-auto object-cover" alt="June Offer 1" />
+      <img src="image/special-offer-2.jpg" class="w-auto h-auto object-cover" alt="June Offer 2" />
+      <img src="image/special-offer-3.jpg" class="w-auto h-auto object-cover" alt="June Offer 2" />
+    </div>
+    <script>
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % 2;
+        document.getElementById('slider').style.transform = `translateX(-${index * 100}%)`;
+      }, 3000);
+    </script>
+  </div>
+
+      <section class="px-6 py-12 text-center">
+        <h1 class="text-3xl font-bold">Welcome to <span class="text-red-700">Rustic Marinara</span></h1>
+        <p class="mt-2 text-gray-700">
+          Taste the heart of Italy—fresh from our oven to your table.<br/>
+      Made with our signature rustic marinara sauce and premium ingredients.
+        </p>
+      </section>
+    </section>
+
+<footer class="bg-[#2E2E2E] text-white mt-12 px-6 py-10 md:flex md:justify-between">
+  <div class="mb-6 md:mb-8">
+    <img src="image/logo-dark.jpg" alt="Rustic Marinara logo" class="w-40 mb-2">
+    <p class="text-xs mt-4">Copyright © 2025 Rustic Marinara. All rights reserved.</p>
+  </div>
+  <div class="text-sm">
+    <h4 class="font-bold mb-2">CUSTOMER SERVICE</h4>
+    <div class="flex gap-8 flex-wrap">
+      <ul class="text-white space-y-1">
+        <li><a href="">Order information</a></li>
+        <li><a href="">Product Halal Certification</a></li>
+        <li><a href="">Our products history</a></li>
+      </ul>
+      <ul class="text-white space-y-1">
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Terms & Conditions</a></li>
+        <li><a href="">FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-sm">
+    <h4 class="font-bold mb-2">CONTACT US</h4>
+    <p>Universitas Araya</p>
+    <p>Monday - Sunday, 08:00 - 22:00</p>
+    <p>(+62) 213 5456 269</p>
+  </div>
+</footer>
 </body>
 </html>
