@@ -6,157 +6,246 @@
   <link rel="stylesheet" href="./src/output.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="script.js"></script>
   <title>Rustic Marinara</title>
-  <style>
-    .scroll-snap-x {
-      scroll-snap-type: x mandatory;
-    }
-    .snap-start {
-      scroll-snap-align: start;
-    }
-  </style>
+  
 </head>
-<body class="bg-[#FDF6EC]">
+<body class="bg-[#FDF6EC] font-sans">
 <!-- Navbar -->
-  <header class="px-6 py-3 flex justify-between items-center">
+<div class="max-w-[1300px] m-auto px-6 py-3 bg-[#FDF6EC]">
+  <header class="flex justify-between items-center">
+    <!-- Logo -->
     <div class="flex items-center space-x-2">
-      <img src="image/Logo.jpg" alt="Rustic Marinara Logo" class="w-32 h-32 object-contain mr-2">
+      <img src="image/logo.png" alt="Rustic Marinara Logo" class="w-32 h-32 object-contain mr-2">
     </div>
-    <nav class="flex gap-20 mt-2 text-2xl text-red-700 font-semibold uppercase">
-      <a href="#" class=" hover:underline">Home</a>
-      <a href="#" class=" hover:underline">Menu</a>
-      <a href="#" class=" hover:underline">Deals</a>
-      <a href="#" class=" hover:underline">About Us</a>
+
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle" class="lg:hidden text-3xl text-[#8C2E34] focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Navigation -->
+    <nav class="hidden lg:flex gap-10 text-2xl text-[#8C2E34] font-semibold uppercase">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="menu.html" class="hover:underline">Menu</a>
+      <a href="#" class="hover:underline">Deals</a>
+      <a href="about-us.html" class="hover:underline">About Us</a>
     </nav>
   </header>
 
-  <div class="relative w-full overflow-hidden">
-    <div id="slider" class="flex transition-transform duration-500 ease-in-out w-[300%]">
-      <img src="image/special-offer-1.jpg" class="w-auto h-auto object-cover" alt="June Offer 1" />
-      <img src="image/special-offer-2.jpg" class="w-auto h-auto object-cover" alt="June Offer 2" />
-      <img src="image/special-offer-3.jpg" class="w-auto h-auto object-cover" alt="June Offer 2" />
-    </div>
-    <script>
-      let index = 0;
-      setInterval(() => {
-        index = (index + 1) % 2;
-        document.getElementById('slider').style.transform = `translateX(-${index * 100}%)`;
-      }, 3000);
-    </script>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden mt-4 flex-col gap-2 text-[#8C2E34] font-semibold text-lg uppercase">
+    <a href="index.html" class="block py-2 hover:underline scroll-smooth">Home</a>
+    <a href="menu.html" class="block py-2 hover:underline">Menu</a>
+    <a href="#" class="block py-2 hover:underline">Deals</a>
+    <a href="#" class="block py-2 hover:underline">About Us</a>
   </div>
+</div>
 
-  <section class="px-6 py-12 text-center">
-    <h1 class="text-3xl font-bold">Welcome to <span class="text-red-700">Rustic Marinara</span></h1>
-      <p class="mt-2 text-gray-700">
+<script>
+  // Toggle mobile menu
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<section class="relative overflow-hidden">
+  <div class="flex transition-transform duration-500 ease-in-out" id="slider-track">
+    <img src="image/special-offer-1.png" alt="Offer 1" class="w-full flex-shrink-0">
+    <img src="image/special-offer-2.png" alt="Offer 2" class="w-full flex-shrink-0">
+    <img src="image/special-offer-3.png" alt="Offer 3" class="w-full flex-shrink-0">
+  </div>
+  <button onclick="prevSlide()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow">
+    ‹
+  </button>
+  <button onclick="nextSlide()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow">
+    ›
+  </button>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const track = document.getElementById('slider-track');
+  const slides = track.children;
+  const totalSlides = slides.length;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  }
+
+  setInterval(nextSlide, 5000);
+</script>
+</section>
+
+<section class="px-4 py-6 space-y-10">
+  <div class="px-6 py-12 text-center">
+    <h1 class="text-4xl font-bold">Welcome to <span class="text-[#8C2E34]">Rustic Marinara</span></h1>
+      <p class="mt-2 text-[#000000] text-lg">
           Taste the heart of Italy—fresh from our oven to your table.<br/>
       Made with our signature rustic marinara sauce and premium ingredients.
       </p>
-  </section>
+  </div>
 
-  <section class="px-6 mt-12">
+  <div class="px-6 mt-12">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl font-semibold ml-5">Get to know everyone faves</h2>
-      <a href="#" class="text-red-700 font-semibold hover:underline text-sm mr-5">See all menu</a>
+      <a href="menu.html" class="text-[#8C2E34] font-semibold hover:underline text-md mr-5">See all menu</a>
     </div>
-    <div class="flex gap-6 flex-wrap overflow-x-auto scroll-snap-x snap-start">
-      <div class="w-40 flex-shrink-0 text-center">
-        <img src="image/margherita.jpg" alt="Margherita" class="w-25 h-25 mx-auto mb-2 object-contain">
-        <p class="text-sm font-medium">Margherita Classic Jalapeño</p>
-      </div>
+  </div>
 
-      <div class="w-40 flex-shrink-0 text-center">
-        <img src="image/jalapeno.jpg" alt="Jalapeno" class="w-25 h-25 mx-auto mb-2 object-contain">
-        <p class="text-sm font-medium">Jalapeno</p>
+  <div class="px-4 my-6">
+    <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Item 1 -->
+      <div class="text-center bg-[#FDF6EC] rounded-2xl p-6 shadow-lg">
+        <img src="image/margherita.png" alt="Margherita" class="mx-auto mb-2 object-contain w-40 h-40">
+        <p class="text-lg font-medium">Margherita Classic<br>Jalapeño</p>
       </div>
-
-      <div class="w-40 flex-shrink-0 text-center">
-        <img src="image/meat-supreme.jpg" alt="Meat Supreme" class="w-25 h-25 mx-auto mb-2 object-contain">
-        <p class="text-sm font-medium">Meat Supreme</p>
+  
+      <!-- Item 2 -->
+      <div class="text-center bg-[#FDF6EC] rounded-2xl p-6 shadow-lg">
+        <img src="image/pepperoni.png" alt="Pepperoni" class="mx-auto mb-2 object-contain w-40 h-40">
+        <p class="text-lg font-medium">Pepperoni Classic<br>Tomato</p>
       </div>
+  
+      <!-- Item 3 -->
+      <div class="text-center bg-[#FDF6EC] rounded-2xl p-6 shadow-lg">
+        <img src="image/meat-supreme.png" alt="Meat Supreme" class="mx-auto mb-2 object-contain w-40 h-40">
+        <p class="text-lg font-medium">Meat Supreme Classic<br>Tomato</p>
+      </div>
+  
+      <!-- Item 4 -->
+      <div class="text-center bg-[#FDF6EC] rounded-2xl p-6 shadow-lg">
+        <img src="image/cheese.png" alt="Cheese Classic" class="mx-auto mb-2 object-contain w-40 h-40">
+        <p class="text-lg font-medium">Cheese Classic<br>Tomato</p>
+      </div>
+  
+    </div>
+  </div>
 
-      <div class="w-40 flex-shrink-0 text-center">
-        <img src="image/pepperoni.jpg" alt="Pepperoni" class="w-25 h-25 mx-auto mb-2 object-contain">
-        <p class="text-sm font-medium">Pepperoni</p>
+  <div class="px-6 mt-12">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+      <h2 class="text-xl font-semibold ml-1 sm:ml-5">Enjoy more foods cheaper!</h2>
+      <a href="deals.html" class="text-[#8C2E34] font-semibold hover:underline text-md mr-1 sm:mr-5">
+        See all deals
+      </a>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 sm:px-4 my-6">
+      <div class="rounded-xl overflow-hidden w-full">
+        <img src="image/special-offer-3.png" alt="Family Meal Special Offer" 
+             class="rounded-lg w-full h-auto object-cover">
+      </div>
+      <div class="rounded-xl overflow-hidden w-full">
+        <img src="image/special-offer-2.png" alt="June's Special Offer" 
+             class="rounded-lg w-full h-auto object-cover">
       </div>
     </div>
+  </div>
+  
 
-  </section>
-
-  <section class="px-6 mt-12">
-    <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl font-semibold ml-5">Enjoy more foods cheaper!</h2>
-      <a href="#" class="text-red-700 font-semibold hover:underline text-sm mr-5">See all deals</a>
-    </div>
-    <div class="flex justify-between items-center gap-4 px-4 my-6">
-      <div class="rounded-xl p-2 w-full md:w-1/2">
-        <img src="image/special-offer-3.jpg" alt="Familiy Meal Special Offer" class="rounded-lg w-full">
-      </div>
-      <div class="rounded-xl p-2 w-full md:w-1/2">
-        <img src="image/special-offer-2.jpg" alt="June's Special Offer" class="rounded-lg w-full">
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-10 px-6">
-    <h2 class="text-center text-xl md:text-2xl font-semibold mb-6">
-      What Our <span class="text-red-600">Customers</span> Are Saying
+  <div class="mt-10 px-6 py-12 text-center">
+    <h2 class="text-xl font-bold mb-10">
+      Whats Our <span class="text-[#8C2E34]">Customers</span> Are Saying
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-      <div class=" shadow-md text-sm p-6 rounded-lg text-center max-w-md mx-auto">
-        <div class="text-red-500 text-xl mb-4">★★★★★</div>
-        <p class="italic mt-2">“The crust is perfectly crisp, and the Rustic Marinara Sauce adds that rich tangy depth you won’t find anywhere else. I order every week!”</p>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+      <div class="rounded-xl shadow-lg p-6">
+        <div class="text-[#8C2E34] text-xl mb-2">★★★★★</div>
+        <p class="text-gray-800 mb-4">“The crust is perfectly crisp, and the Rustic Marinara Sauce adds that rich tangy depth you won’t find anywhere else. I order every week!”</p>
       <p class="mt-2 font-semibold text-center">–Andy M.–</p>
       </div>
-      <div class=" shadow-md  text-sm p-6 rounded-lg text-center max-w-md mx-auto">
-        <div class="text-red-500 text-xl mb-4">★★★★★</div>
-        <p class="italic mt-2">“We love the combo meals. Great value and perfect for  dinner date. No need to worry about the taste, we bothe agree that rustic marinara is numero uno.”</p>
+
+      <div class="rounded-xl shadow-lg p-6">
+        <div class="text-[#8C2E34] text-xl mb-4">★★★★★</div>
+        <p class="text-gray-800 mb-4">“We love the combo meals. Great value and perfect for  dinner date. No need to worry about the taste, we bothe agree that rustic marinara is numero uno.”</p>
       <p class="mt-2 font-semibold text-center">-Barbie & Ken-</p>
       </div>
-      <div class=" shadow-md text-sm p-6 rounded-lg text-center max-w-md mx-auto">
-        <div class="text-red-500 text-xl mb-4">★★★★★</div>
-        <p class="italic mt-2">“Didn’t expect much from the drinks but the Mango Sunset Fizz and Lychee Mojito were super refreshing. A great match for the spicy tuna pizza”</p>
+
+      <div class="rounded-xl shadow-lg p-6">
+        <div class="text-[#8C2E34] text-xl mb-4">★★★★★</div>
+        <p class="text-gray-800 mb-4">“Didn’t expect much from the drinks but the Mango Sunset Fizz and Lychee Mojito were super refreshing. A great match for the spicy tuna pizza”</p>
       <p class="mt-2 font-semibold text-center">–Charlie C.–</p>
       </div>
-      <div class=" shadow-md  text-sm p-6 rounded-lg text-center max-w-md mx-auto">
-        <div class="text-red-500 text-xl mb-4">★★★★★</div>
-        <p class="italic mt-2">“Tasted just like the pizza I had in Rome. Their Meat Supreme  and Truffle Mushroom was a flavor bomb, and the lasagna? absolute comfort food!”</p>
+
+      <div class="rounded-xl shadow-lg p-6">
+        <div class="text-[#8C2E34] text-xl mb-4">★★★★★</div>
+        <p class="text-gray-800 mb-4">“Tasted just like the pizza I had in Rome. Their Meat Supreme  and Truffle Mushroom was a flavor bomb, and the lasagna? absolute comfort food!”</p>
       <p class="mt-2 font-semibold text-center">-Doreamon-</p>
       </div>
-      <div class=" shadow-md text-sm p-6 rounded-lg text-center max-w-md mx-auto">
-        <div class="text-red-500 text-xl mb-4">★★★★★</div>
-        <p class="italic mt-2">“Tried everything from the appetizer, pizza, pasta. All menu are totally amazing. If you like cheese, go for their Cheese Heaven, it just hit different.”</p>
+
+      <div class="rounded-xl shadow-lg p-6">
+        <div class="text-[#8C2E34] text-xl mb-4">★★★★★</div>
+        <p class="text-gray-800 mb-4">“Tried everything from the appetizer, pizza, pasta. All menu are totally amazing. If you like cheese, go for their Cheese Heaven, it just hit different.”</p>
       <p class="mt-2 font-semibold text-center">–Elleanor–</p>
       </div>
-    </div>
-  </section>
 
-<footer class="bg-[#2E2E2E] text-white mt-12 px-6 py-10 md:flex md:justify-between">
-  <div class="mb-6 md:mb-8">
-    <img src="image/logo-dark.jpg" alt="Rustic Marinara logo" class="w-40 mb-2">
-    <p class="text-xs mt-4">Copyright © 2025 Rustic Marinara. All rights reserved.</p>
-  </div>
-  <div class="text-sm">
-    <h4 class="font-bold mb-2">CUSTOMER SERVICE</h4>
-    <div class="flex gap-8 flex-wrap">
-      <ul class="text-white space-y-1">
-        <li><a href="">Order information</a></li>
-        <li><a href="">Product Halal Certification</a></li>
-        <li><a href="">Our products history</a></li>
-      </ul>
-      <ul class="text-white space-y-1">
-        <li><a href="">Privacy Policy</a></li>
-        <li><a href="">Terms & Conditions</a></li>
-        <li><a href="">FAQs</a></li>
-      </ul>
+      <div class="rounded-xl shadow-lg p-6">
+        <div class="text-[#8C2E34] text-xl mb-4">★★★★★</div>
+        <p class="text-gray-800 mb-4">“Perfectoly delicious! The crust is perfect, the sauce is perfect, everything is perfect! I can’t wait to order again! Thanks Rustic Marinara for a great experience!”</p>
+      <p class="mt-2 font-semibold text-center">-Mario-</p>
+      </div>
     </div>
   </div>
-  <div class="text-sm">
-    <h4 class="font-bold mb-2">CONTACT US</h4>
-    <p>Universitas Araya</p>
-    <p>Monday - Sunday, 08:00 - 22:00</p>
-    <p>(+62) 213 5456 269</p>
+
+</section>
+<section class="hidden lg:flex bg-[#E3e2D2] p-6 rounded-xl relative flex-col md:flex-row items-center justify-center gap-20 mx-5">
+  <div class="w-40 h-72 bg-green-700 rounded-xl flex items-center"></div>
+
+  <!-- Deskripsi -->
+  <div class="text-center md:text-left">
+    <h2 class="text-4xl font-bold mb-5">Download<br>Our Resto Mobile App</h2>
+    <p class="text-lg text-[#000000]">Get more exclusive discounts & voucher to apply with <br>Our Resto Mobile app</p>
+  </div>
+</section>
+
+<footer class="bg-[#2E2E2E] text-white mt-12 px-6 py-10">
+  <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-3 text-center md-text-left lg:grid-cols-3">
+    
+    <!-- Logo & Copyright -->
+    <div class="flex flex-col items-center md:items-center">
+      <img src="image/logo.png" alt="Rustic Marinara logo" class="w-36 mb-3">
+    </div>
+
+    <!-- Customer Service -->
+    <div class="flex flex-col items-center md:items-start">
+      <h4 class="font-bold lg:mb-10 md:mb-5 text-md uppercase">Customer Service</h4>
+      <div class="flex flex-col sm:flex-row md:flex-col md:text-start gap-6 lg:text-start">
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:underline">Order information</a></li>
+          <li><a href="#" class="hover:underline">Product Halal Certification</a></li>
+          <li><a href="#" class="hover:underline">Our products history</a></li>
+        </ul>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:underline">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="flex flex-col items-center md:items-start">
+      <h4 class="font-bold lg:mb-10 md:mb-5 text-md uppercase">Contact Us</h4>
+      <p class="text-sm">Universitas Araya</p>
+      <p class="text-sm">Monday - Sunday, 08:00 - 22:00</p>
+      <p class="text-sm">(+62) 213 5456 269</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center mt-10 md:items-center sm:text-center sm:text-xs">
+    <p class="text-sm">Copyright © 2025 Rustic Marinara. All rights reserved.</p>
   </div>
 </footer>
 </body>
