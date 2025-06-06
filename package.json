@@ -2,5 +2,25 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.6",
     "tailwindcss": "^4.1.6"
-  }
+  },
+  "name": "bncc-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theo00000/FinalProject-BNCC-LnT-FrontendDevelopment-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theo00000/FinalProject-BNCC-LnT-FrontendDevelopment-2025/issues"
+  },
+  "homepage": "https://github.com/theo00000/FinalProject-BNCC-LnT-FrontendDevelopment-2025#readme",
+  "description": ""
 }

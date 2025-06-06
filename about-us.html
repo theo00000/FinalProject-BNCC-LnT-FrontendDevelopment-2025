@@ -1,91 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./src/output.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="image/logo.png" type="image/png">
   <title>Rustic Marinara</title>
-  
 </head>
+
 <body class="bg-[#FDF6EC] font-sans">
-<!-- Navbar -->
-<div class="max-w-[1300px] m-auto px-6 py-3 bg-[#FDF6EC]">
-  <header class="flex justify-between items-center">
-    <!-- Logo -->
-    <div class="flex items-center space-x-2">
-      <img src="image/logo.png" alt="Rustic Marinara Logo" class="w-32 h-32 object-contain mr-2">
+  <!-- Navbar -->
+  <div class="max-w-[1600px] m-auto px-6 py-3 sticky top-0 z-50 bg-[#FDF6EC] shadow-md">
+    <header class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="image/logo.png" alt="Rustic Marinara Logo" class="w-32 h-32 object-contain mr-2">
+      </div>
+  
+      <!-- Menu Toggle Button -->
+      <button id="menu-toggle" class="lg:hidden text-3xl text-[#8C2E34] focus:outline-none">
+        ☰
+      </button>
+  
+      <!-- Navigation -->
+      <nav aria-label="Primary Navigation" class="hidden lg:flex gap-10 text-2xl text-[#8C2E34] font-semibold uppercase">
+        <a href="index.html" class="block py-2 hover:underline">Home</a>
+        <a href="menu.html" class="block py-2 hover:underline">Menu</a>
+        <a href="deals.html" class="block py-2 hover:underline">Deals</a>
+        <a href="about-us.html" class="block py-2 hover:underline">About Us</a>
+      </nav>
+    </header>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden mt-4 flex-col gap-2 text-[#8C2E34] font-semibold text-lg uppercase">
+      <a href="index.html" class="block py-2 hover:underline scroll-smooth">Home</a>
+      <a href="menu.html" class="block py-2 hover:underline">Menu</a>
+      <a href="deals.html" class="block py-2 hover:underline">Deals</a>
+      <a href="about-us.html" class="block py-2 hover:underline">About Us</a>
     </div>
-
-    <!-- Menu Toggle Button -->
-    <button id="menu-toggle" class="lg:hidden text-3xl text-[#8C2E34] focus:outline-none">
-      ☰
-    </button>
-
-    <!-- Navigation -->
-    <nav class="hidden lg:flex gap-10 text-2xl text-[#8C2E34] font-semibold uppercase">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="menu.html" class="hover:underline">Menu</a>
-      <a href="#" class="hover:underline">Deals</a>
-      <a href="#" class="hover:underline">About Us</a>
-    </nav>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden hidden mt-4 flex-col gap-2 text-[#8C2E34] font-semibold text-lg uppercase">
-    <a href="index.html" class="block py-2 hover:underline">Home</a>
-    <a href="menu.html" class="block py-2 hover:underline">Menu</a>
-    <a href="#" class="block py-2 hover:underline">Deals</a>
-    <a href="about-us.html" class="block py-2 hover:underline">About Us</a>
   </div>
-</div>
-
-<script>
-  // Toggle mobile menu
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-  });
-</script>
-
-<footer class="bg-[#2E2E2E] text-white mt-12 px-6 py-10">
-  <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-3 text-center md-text-left lg:grid-cols-3">
-    
-    <!-- Logo & Copyright -->
-    <div class="flex flex-col items-center md:items-center">
-      <img src="image/logo.png" alt="Rustic Marinara logo" class="w-36 mb-3">
+  <!-- Intro Section -->
+  <section class="px-6 py-8">
+    <div class="max-w-7xl mx-auto text-end">
+      <p class="text-[#C23B22] text-lg font-semibold mb-6 md:text-base">"Where Timeless Tradition Meets Every Slice"</p>
     </div>
+  </section>
 
-    <!-- Customer Service -->
-    <div class="flex flex-col items-center md:items-start">
-      <h4 class="font-bold lg:mb-10 md:mb-5 text-md uppercase">Customer Service</h4>
-      <div class="flex flex-col sm:flex-row md:flex-col md:text-start gap-6 lg:text-start">
-        <ul class="space-y-1 text-sm">
-          <li><a href="#" class="hover:underline">Order information</a></li>
-          <li><a href="#" class="hover:underline">Product Halal Certification</a></li>
-          <li><a href="#" class="hover:underline">Our products history</a></li>
-        </ul>
-        <ul class="space-y-1 text-sm">
-          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-          <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
-          <li><a href="#" class="hover:underline">FAQs</a></li>
-        </ul>
+  <!-- Story Section -->
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
+    <div class="text-[#00000] text-xl leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-bold text-start md:text-start mb-2">
+        The <span class="text-[#C23B22]">SAUCE</span> that starts it all…
+      </h2>
+      <p>From the sun-drenched coasts of Southern Italy came a Marinara sauce. A rustic cooked slow and low sauce born in seaside kitchens and made by fishermen’s wives, it was simple, hearty, and full of soul — the ultimate comfort food.</p>
+    </div>
+    <div class="flex justify-center">
+      <img src="image/about-us-2.jpeg" alt="Historical Marinara Sauce" class="rounded-lg shadow-md w-full max-w-sm">
+    </div>
+  </div>
+
+  <div class="my-10"></div>
+
+  <!-- Signature Section -->
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
+    <h3 class="block sm:hidden text-2xl font-semibold mb-2 text-[#000000] text-center">
+      Our <span class="text-[#C23B22]">Signature</span> Sauce
+    </h3>
+    <div class="flex justify-center">
+      <img src="image/pasta.jpeg" alt="Rustic Marinara Signature Sauce" class="rounded-lg shadow-md w-full max-w-xs">
+    </div>
+    <div>
+      <h3 class="hidden sm:block text-2xl md:text-4xl font-bold mb-2 text-[#000000]">
+        Our <span class="text-[#C23B22]">Signature</span> Sauce
+      </h3>
+      <p class="text-[#000000] text-xl leading-relaxed">
+        We’ve kept the soul of the original and infused it with depth, balance, and care. Our Rustic Marinara is slow-simmered daily using sun-ripened tomatoes, golden garlic, fresh basil, and extra virgin olive oil. It’s smooth, savory, and just a little wild — like good food should be.
+      </p>
+    </div>
+  </div>
+  
+
+  <!-- Floating Image Section -->
+  <section class="px-6 py-16 relative">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="absolute -top-9 left-0 hidden md:block md:top-2 md:-left-4">
+        <img src="image/cheese.png" alt="Cheese" class="lg:w-40 md:w-32 rounded-full shadow-md">
+      </div>
+      <div class="absolute -top-16 right-0 hidden md:block md:-top-10 md:-right-0">
+        <img src="image/pepperoni.png" alt="Pepperoni" class="lg:w-60 md:w-36 rounded-full shadow-md">
+      </div>
+
+      <p class="text-[#C23B22] text-xl md:text-bold mb-6">
+        "A Sauce That Whispers Stories in Every Spoon"
+      </p>
+      <p class="text-[#000000] text-xl md:text-xl leading-relaxed max-w-3xl mx-auto">
+        With our signature Rustic Marinara Sauce as the base, we craft pizzas, pastas, and appetizers that blend tradition with bold creativity — from the classic Margherita and fiery Spicy Tuna Jalapeño, to comforting Lasagna Tradizionale, Spaghetti Bolognese, and Garlic Breadsticks served with our rich, flavorful dip.
+      </p>
+
+      <div class="absolute -bottom-10 left-24 hidden md:block md:-bottom-12 md:-left-2">
+        <img src="image/fettucine-alfredo.jpeg" alt="Fettucine Alfredo" class="lg:w-52 md:w-32 rounded-full shadow-md">
+      </div>
+      <div class="absolute -bottom-10 right-16 hidden md:block md:-bottom-12 md:-right-0">
+        <img src="image/es-jeruk.png" alt="Mango Sunset" class="lg:w-32 md:w-20 rounded-full shadow-md">
       </div>
     </div>
+  </section>
 
-    <!-- Contact Us -->
-    <div class="flex flex-col items-center md:items-start">
-      <h4 class="font-bold lg:mb-10 md:mb-5 text-md uppercase">Contact Us</h4>
-      <p class="text-sm">Universitas Araya</p>
-      <p class="text-sm">Monday - Sunday, 08:00 - 22:00</p>
-      <p class="text-sm">(+62) 213 5456 269</p>
+  <div class="my-24"></div>
+
+  
+  <section class="px-6 py-8">
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-2 text-[#000000] text-center">
+        More than just a <span class="text-[#C23B22]">PASTA,</span>
+      </h3>
     </div>
+  </section>
+
+
+
+  <!-- Atmosphere Images -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto px-4 mt-16">
+    <img src="image/about-us.jpeg" alt="Family Dining 1" class="rounded-lg shadow-md w-full h-72 object-cover">
+    <img src="image/about-us-1.jpeg" alt="Family Dining 2" class="rounded-lg shadow-md w-full h-72 object-cover">
   </div>
 
-  <div class="flex flex-col items-center mt-10 md:items-center sm:text-center sm:text-xs">
-    <p class="text-sm">Copyright © 2025 Rustic Marinara. All rights reserved.</p>
-  </div>
-</footer>
+  <p class="text-[#C23B22] text-xl md:text-xl mt-6 text-center">
+    "We Don’t Just Serve Food — We Share a Story"
+  </p>
+
+  <!-- Footer -->
+  <footer class="bg-[#2E2E2E] text-white mt-12 px-6 py-10">
+    <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-3 text-center md-text-left lg:grid-cols-3">
+      
+      <!-- Logo & Copyright -->
+      <div class="flex flex-col items-center md:items-center">
+        <img src="image/logo.png" alt="Rustic Marinara logo" class="w-36 mb-3">
+      </div>
+  
+      <!-- Customer Service -->
+      <div class="flex flex-col items-center md:items-start">
+        <h4 class="font-bold lg:mb-10 md:mb-5 text-md uppercase">Customer Service</h4>
+        <div class="flex flex-col sm:flex-row md:flex-col md:text-start gap-6 lg:text-start">
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:underline">Order information</a></li>
+            <li><a href="#" class="hover:underline">Product Halal Certification</a></li>
+            <li><a href="#" class="hover:underline">Our products history</a></li>
+          </ul>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+            <li><a href="#" class="hover:underline">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Contact Us -->
+      <div class="flex flex-col items-center md:items-start">
+        <h4 class="font-bold lg:mb-10 md:mb-5 text-md uppercase">Contact Us</h4>
+        <p class="text-sm">Universitas Araya</p>
+        <p class="text-sm">Monday - Sunday, 08:00 - 22:00</p>
+        <p class="text-sm">(+62) 213 5456 269</p>
+      </div>
+    </div>
+  
+    <div class="flex flex-col items-center mt-10 md:items-center sm:text-center sm:text-xs">
+      <p class="text-sm">Copyright © 2025 Rustic Marinara. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
