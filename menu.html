@@ -7,6 +7,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="image/logo.png" type="image/png" class="max-[500px]:">
+  <style>
+    .order-btn {
+      background-color: #15803a; 
+      transition: background 0.2s;
+    }
+    .order-btn:hover {
+     background-color: #556B2F;
+    }
+    .review-bill-btn {
+      background-color: #C4432B;
+      transition: background 0.2s;
+    }
+    .review-bill-btn:hover {
+      background-color: #8C2E34;
+    }
+  </style>
   <title>Rustic Marinara</title>
   
 </head>
@@ -49,24 +65,52 @@
 </section>
 
 <!-- Navigation Bar (Hidden on small screens) -->
-<div class="bg-orange-100 p-4 flex flex-wrap items-center gap-2 md:hidden sm:hidden">
+<div class="bg-orange-100 p-4 flex flex-wrap items-center gap-2">
   <button class="bg-orange-200 px-4 py-1 rounded-full hover:bg-orange-300"><a href="#MustTry">MustTry</a></button>
   <button class="bg-orange-200 px-4 py-1 rounded-full hover:bg-orange-300"><a href="#Pizza">Pizza</a></button>
   <button class="bg-orange-200 px-4 py-1 rounded-full hover:bg-orange-300"><a href="#Pasta">Pasta</a></button>
   <button class="bg-orange-200 px-4 py-1 rounded-full hover:bg-orange-300"><a href="#Appetizer">Appetizer</a></button>
   <button class="bg-orange-200 px-4 py-1 rounded-full hover:bg-orange-300"><a href="#Drinks">Drinks</a></button>
   <input type="text" placeholder="Search..." class="ml-auto px-3 py-1 rounded border border-orange-300" />
+  <button class="review-bill-btn mt-2 text-white px-3 py-1 rounded">Review Bill</button>
 </div>
 
-  <section id="MustTry" class="px-6 py-12 md:hidden sm:hidden">
-    <!-- Deskripsi section -->  
-    <div class="max-w-[1300px] m-auto">
-      <h2 class="text-4xl font-semibold text-[#00000] mb-3">Must try</h2>
-      <p class="text-[#8C2E34] leading-relaxed text-lg ">
-        Our most-loved dishes, handpicked by our chefs and adored by customers. Bursting with bold flavors and made with our signature Rustic Marinara Sauce—these are the bites you simply can't miss.
-      </p>
+<section id="MustTry" class="px-6 py-12">
+  <!-- Deskripsi section -->  
+  <div class="max-w-[1300px] m-auto">
+    <h2 class="text-4xl font-semibold text-[#00000] mb-3">Must Try</h2>
+    <p class="text-[#8C2E34] leading-relaxed text-lg">
+      Our most-loved dishes, handpicked by our chefs and adored by customers. Bursting with bold flavors and made with our signature Rustic Marinara Sauce—these are the bites you simply can't miss.
+    </p>
+  </div>
+
+  <!-- Must Try Items -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-12">
+    <div class="menu-item pizza bg-white shadow-md rounded-xl p-4">
+      <img src="margherita.png" alt="Margherita Classic" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Margherita Classic</h3>
+      <p class="text-gray-600 mb-2">Fresh mozzarella and sweet basil over a rich layer of our house-made Rustic Marinara Sauce. Pure, simple, and soulful.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 65.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
     </div>
-  </section>
+
+    <div class="menu-item appetizer bg-white shadow-md rounded-xl p-4">
+      <img src="mb.jpg" alt="Mozzarella Bites" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Mozzarella Bites</h3>
+      <p class="text-gray-600 mb-2">Crunchy on the outside, gooey on the inside—bite-sized mozzarella fritters served with spicy dip.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 48.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+
+    <div class="menu-item pasta bg-white shadow-md rounded-xl p-4">
+      <img src="lsg.jpg" alt="Lasagna Tradizionale" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Lasagna Tradizionale</h3>
+      <p class="text-gray-600 mb-2">Layered pasta, meat sauce, béchamel, and mozzarella, baked until bubbly and golden.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 80.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+  </div>
+</section>
 
   <section id="Pizza" class="px-6 py-12">
     <!-- Deskripsi section -->  
@@ -76,38 +120,146 @@
         Crafted with our signature Rustic Marinara Sauce, slow-cooked with herbs and love. Bold flavors, wood-fired crust—simply irresistible.
       </p>
     </div>
-  </section>
+    <!-- Pizza Items -->
+    <div id="Pizza" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-12">
+      <div class="menu-item pizza bg-white shadow-md rounded-xl p-4">
+         <img src="jalapeno.png" alt="Spicy Tuna Jalapeño" class="rounded-xl mb-4">
+         <h3 class="text-xl font-bold text-[#8B2E2E]">Spicy Tuna Jalapeño 🌶️</h3>
+         <p class="text-gray-600 mb-2">Rustic Marinara meets spicy tuna, jalapeños, and onions in this fiery fusion, topped with sriracha mayo.</p>
+         <p class="font-semibold text-[#8B2E2E]">Rp 82.000</p>
+         <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+      </div>
 
-  <section id="Pasta" class="px-6 py-12">
-    <!-- Deskripsi section -->  
-    <div class="max-w-[1300px] m-auto">
-      <h2 class="text-4xl font-semibold text-[#00000] mb-3">Pasta</h2>
-      <p class="text-[#8C2E34] leading-relaxed text-lg ">
-        Twirl into tradition with our signature pasta dishes—made fresh and layered with rich, Rustic Marinara or creamy sauces. Each bite brings out authentic Italian comfort and deep, savory flavor.
-      </p>
+    <div class="menu-item pizza bg-white shadow-md rounded-xl p-4">
+      <img src="margherita.png" alt="Margherita Classic" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Margherita Classic</h3>
+      <p class="text-gray-600 mb-2">Fresh mozzarella and sweet basil over a rich layer of our house-made Rustic Marinara Sauce. Pure, simple, and soulful.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 65.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
     </div>
-  </section>
 
-  <section id="Appetizer" class="px-6 py-12">
-    <!-- Deskripsi section -->  
-    <div class="max-w-[1300px] m-auto">
-      <h2 class="text-4xl font-semibold text-[#00000] mb-3">Appetizer</h2>
-      <p class="text-[#8C2E34] leading-relaxed text-lg ">
-        Start strong with our crowd-favorite bites. From garlicky breadsticks to crispy wings, our appetizers are made to warm up your appetite—and your table.
-      </p>
+    <div class="menu-item pizza bg-white shadow-md rounded-xl p-4">
+      <img src="veggie.png" alt="Veggie Delight" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Veggie Delight</h3>
+      <p class="text-gray-600 mb-2">Bell peppers, mushrooms, olives, and onions over Rustic Marinara, topped with a hint of pesto drizzle.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 68.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
     </div>
-  </section>
 
-  <section id="Drinks" class="px-6 py-12">
-    <!-- Deskripsi section -->  
-    <div class="max-w-[1300px] m-auto">
-      <h2 class="text-4xl font-semibold text-[#00000] mb-3">Drinks</h2>
-      <p class="text-[#8C2E34] leading-relaxed text-lg ">
-        Cool down and refresh with handcrafted drinks that pair perfectly with every dish. From sparkling teas to creamy sodas, every sip is a flavorful finish—or a fresh new start.
-      </p>
+    <div class="menu-item pizza bg-white shadow-md rounded-xl p-4">
+      <img src="cheese.png" alt="Cheese Heaven" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Cheese Heaven</h3>
+      <p class="text-gray-600 mb-2">Mozzarella, parmesan, cheddar, and gorgonzola melt into our Rustic Marinara base for a perfectly balanced richness.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 78.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div> 
+  </section>     
+
+<section id="Pasta" class="px-6 py-12">
+  <div class="max-w-[1300px] m-auto">
+    <h2 class="text-4xl font-semibold text-[#00000] mb-3">Pasta</h2>
+    <p class="text-[#8C2E34] leading-relaxed text-lg">
+      Twirl into tradition with our signature pasta dishes—made fresh and layered with rich, Rustic Marinara or creamy sauces. Each bite brings out authentic Italian comfort and deep, savory flavor.
+    </p>
+  </div>
+  <!-- Pasta Items -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-12">
+    <div class="menu-item pasta bg-white shadow-md rounded-xl p-4">
+      <img src="sp.jpg" alt="Spaghetti Bolognese" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Spaghetti Bolognese</h3>
+      <p class="text-gray-600 mb-2">Classic al dente Italian spaghetti in a rich, slow-cooked beef folded into our Rustic Marinara Sauce, finished with parmesan.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 75.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
     </div>
-  </section>
-      
+
+    <div class="menu-item pasta bg-white shadow-md rounded-xl p-4">
+      <img src="fettucine-alfredo.png" alt="Fettuccine Alfredo" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Fettuccine Alfredo</h3>
+      <p class="text-gray-600 mb-2">Creamy alfredo sauce made with real butter and cheese, tossed with fettuccine and grilled chicken.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 78.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+
+    <div class="menu-item pasta bg-white shadow-md rounded-xl p-4">
+      <img src="lsg.jpg" alt="Lasagna Tradizionale" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Lasagna Tradizionale</h3>
+      <p class="text-gray-600 mb-2">Layered pasta, meat sauce, béchamel, and mozzarella, baked until bubbly and golden.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 80.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+
+    <div class="menu-item pasta bg-white shadow-md rounded-xl p-4">
+      <img src="penne.jpg" alt="Penne Arrabbiata" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Penne Arrabbiata</h3>
+      <p class="text-gray-600 mb-2">Spicy garlic tomato sauce tossed with penne and chili flakes for a fiery, flavorful bite.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 72.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+  </div>
+</section>
+
+<section id="Appetizer" class="px-6 py-12">
+  <div class="max-w-[1300px] m-auto">
+    <h2 class="text-4xl font-semibold text-[#00000] mb-3">Appetizer</h2>
+    <p class="text-[#8C2E34] leading-relaxed text-lg">
+      Start strong with our crowd-favorite bites. From garlicky breadsticks to crispy wings, our appetizers are made to warm up your appetite—and your table.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-12">
+    <div class="menu-item appetizer bg-white shadow-md rounded-xl p-4">
+      <img src="gb.jpg" alt="Garlic Breadsticks" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Garlic Breadsticks</h3>
+      <p class="text-gray-600 mb-2">Warm, buttery breadsticks brushed with garlic herb oil and served with marinara dip.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 38.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+
+    <div class="menu-item appetizer bg-white shadow-md rounded-xl p-4">
+      <img src="cw.jpg" alt="Crispy Chicken Wings" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Crispy Chicken Wings</h3>
+      <p class="text-gray-600 mb-2">Fried golden with a choice of BBQ, spicy buffalo, or honey garlic glaze.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 55.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+
+    <div class="menu-item appetizer bg-white shadow-md rounded-xl p-4">
+      <img src="mb.jpg" alt="Mozzarella Bites" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Mozzarella Bites</h3>
+      <p class="text-gray-600 mb-2">Crunchy on the outside, gooey on the inside—bite-sized mozzarella fritters served with spicy dip.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 48.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+  </div>
+</section>
+
+<section id="Drinks" class="px-6 py-12">
+  <div class="max-w-[1300px] m-auto">
+    <h2 class="text-4xl font-semibold text-[#00000] mb-3">Drinks</h2>
+    <p class="text-[#8C2E34] leading-relaxed text-lg">
+      Cool down and refresh with handcrafted drinks that pair perfectly with every dish. From sparkling teas to creamy sodas, every sip is a flavorful finish—or a fresh new start.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-12">
+    <div class="menu-item drinks bg-white shadow-md rounded-xl p-4">
+      <img src="sparkling-lemon-tea.jpg" alt="Sparkling Lemon Tea" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Sparkling Lemon Tea</h3>
+      <p class="text-gray-600 mb-2">Refreshing black tea with a citrusy twist and fizzy sparkle.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 30.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+
+    <div class="menu-item drinks bg-white shadow-md rounded-xl p-4">
+      <img src="cola.jpg" alt="Classic Cola" class="rounded-xl mb-4">
+      <h3 class="text-xl font-bold text-[#8B2E2E]">Classic Cola</h3>
+      <p class="text-gray-600 mb-2">Served chilled, bubbly, and perfectly paired with any pizza.</p>
+      <p class="font-semibold text-[#8B2E2E]">Rp 22.000</p>
+      <button class="order-btn mt-2 text-white px-3 py-1 rounded">Place Order</button>
+    </div>
+  </div>
+</section>
+
   <footer class="bg-[#2E2E2E] text-white mt-12 px-6 py-10">
     <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-3 text-center md-text-left lg:grid-cols-3">
       
