@@ -5,4 +5,21 @@
   --font-sans: 'Quicksand', sans-serif;
   --font-mono: 'Cormorant Garamond', serif;
   --font-cinzel: 'Cinzel', serif;
+  --animate-pulse: 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
